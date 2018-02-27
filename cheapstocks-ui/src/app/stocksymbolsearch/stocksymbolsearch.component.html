@@ -3,6 +3,9 @@
     <div layout="row">
         <mat-form-field class="example-form-field">
             <input matInput type="text" placeholder="Stock Ticker" [(ngModel)]="input"/>
+            <button mat-button *ngIf="input" matSuffix mat-icon-button aria-label="Clear" (click)="input=''">
+                <mat-icon>close</mat-icon>
+            </button>
           </mat-form-field>
           <button mat-raised-button (click)="getStockInfoFromInput()">Click me!</button>
     </div>
