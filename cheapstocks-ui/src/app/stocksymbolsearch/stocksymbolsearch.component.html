@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<div>
+    <div layout="row">
+        <mat-form-field class="example-form-field">
+            <input matInput type="text" placeholder="Stock Ticker" [(ngModel)]="input"/>
+          </mat-form-field>
+          <button mat-raised-button (click)="getStockInfoFromInput()">Click me!</button>
+    </div>
+  <div layout="row">
+      <li *ngFor="let stock of stocks">
+        <div layout="column">
+          <div layout="row">
+              {{ stock.company_name }}
+          </div>
+          <div layout="row">
+              {{ stock.symbol }}
+          </div>
+          <div layout="row">
+              {{ stock.sector }}
+          </div>
+          <div layout="row">
+              {{ stock.price | currency }}
+          </div>
+          <div layout="row">
+              {{ stock.avg_volume }}
+          </div>
+          <div layout="row">
+              {{ stock.pe_ratio }}
+          </div>
+          <div layout="row">
+              {{ stock.market_cap | currency }}
+          </div>
+          <div layout="row">
+              {{ stock.week52high }}
+          </div>
+          <div layout="row">
+              {{ stock.week52low }}
+          </div>
+        </div>
+      </li>
+  </div>
+</div>
